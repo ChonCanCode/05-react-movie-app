@@ -1,10 +1,10 @@
 import "./style.css";
-import { MovieCard } from "./components/MovieCard";
+import MovieCard from "./components/MovieCard";
 
-//conditional rendering
+//notes when exporting in default remember not to import under {} as this will be a named function. If export default remove {} from import.
 
 function App() {
-  const movieNumber = 1;
+  const movieNumber = 2;
 
   return (
     <>
