@@ -1,13 +1,21 @@
 import "./style.css";
-import MovieCard from "./components/MovieCard";
+import Favourite from "./pages/Favourites";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-
-//notes when exporting in default remember not to import under {} as this will be a named function. If export default remove {} from import.
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
-      <Home />
+      <div>
+        <NavBar />
+      </div>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favourites" element={<Favourite />} />
+        </Routes>
+      </main>
     </>
   );
 }
