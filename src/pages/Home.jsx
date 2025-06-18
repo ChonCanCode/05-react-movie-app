@@ -1,15 +1,14 @@
 import MovieCard from "../components/MovieCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import "../css/Home.css";
+import { getPopularMovies, searchMovies } from "../services/api";
+
+//useEffect allows you to add side effects to your functions or to your components and define when they should run.
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const movies = [
-    { id: 1, title: "Movie 1", release_date: "2020" },
-    { id: 2, title: "Movie 2", release_date: "2020" },
-    { id: 3, title: "Movie 3", release_date: "2020" },
-    { id: 4, title: "Movie 4", release_date: "2020" },
-  ];
+  const movies = getPopularMovies();
 
   const handleSearch = (e) => {
     e.preventDefault();
